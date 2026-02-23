@@ -14,8 +14,7 @@ const generateInterviewQuestions = async (req, res) => {
 
         const prompt = questionAnswerPrompt(role, experience, topicsToFocus, numberOfQuestions);
         const response = await ai.models.generateContent({
-            // model: "gemini-2.5-flash",
-            model: "gemini 3 Flash",
+             model: "gemini-2.5-flash",
             contents: prompt,
         })
         let rawText = response.text
@@ -50,8 +49,7 @@ const generateConceptExplanation = async (req, res) => {
         }
         const prompt = conceptExplainPrompt(question)
         const response = await ai.models.generateContent({
-            // model: "gemini-2.5-flash-lite",
-            model: "gemini 3.1 Pro",
+             model: "gemini-2.5-flash-lite",
             contents: prompt,
         })
         let rawText = response.text
